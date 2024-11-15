@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rating {
+    display: flex; /* Użycie flexboxa dla układu */
+    justify-content: flex-start; /* Ustaw gwiazdki po lewej stronie */
+}
+
+.rating input {
+    display: none; /* Ukryj radio button */
+}
+
+.rating label {
+    color: gray; /* Domyślny kolor gwiazdek */
+    font-size: 2rem; /* Rozmiar gwiazdek */
+    cursor: pointer; /* Kursor wskazuje, że można klikać */
+}
+
+/* Kolor złoty dla zaznaczonej gwiazdki i wszystkich przed nią */
+.rating input:checked ~ label {
+    color: gold; /* Kolor złoty dla zaznaczonej gwiazdki i wszystkich przed nią */
+}
+
+/* Kolor złoty dla zaznaczonej gwiazdki */
+.rating input:checked + label,
+.rating input:checked + label ~ label {
+    color: gold; /* Kolor złoty dla zaznaczonej gwiazdki */
+}
+
+/* Styl dla hover */
+.rating label:hover,
+.rating label:hover ~ label {
+    color: gold; /* Kolor złoty dla zaznaczonej gwiazdki podczas najeżdżania */
+}
